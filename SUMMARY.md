@@ -1,0 +1,30 @@
+# Summary
+
+* [Quickstart](notebooks/introduction/intro.md) NONUM
+  * [Adding markdown files](notebooks/introduction/markdown.md) NONUM
+  * [Adding notebooks](notebooks/introduction/notebooks.ipynb) NONUM
+* [Data Science](notebooks/01/what-is-data-science.md)
+  * [Introduction](notebooks/01/1/intro.md)
+    * [Computational Tools](notebooks/01/1/1/computational-tools.md)
+    * [Statistical Techniques](notebooks/01/1/2/statistical-techniques.md)
+  * [Why Data Science?](notebooks/01/2/why-data-science.md)
+  * [Plotting the Classics](notebooks/01/3/Plotting_the_Classics.ipynb) 
+    * [Literary Characters](notebooks/01/3/1/Literary_Characters.ipynb)
+    * [Another Kind of Character](notebooks/01/3/2/Another_Kind_Of_Character.ipynb)
+* [Causality and Experiments](notebooks/02/causality-and-experiments.md)
+  * [John Snow and the Broad Street Pump](notebooks/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump.md)
+  * [Snow’s “Grand Experiment”](notebooks/02/2/snow-s-grand-experiment.md)
+  * [Establishing Causality](notebooks/02/3/establishing-causality.md)
+  * [Randomization](notebooks/02/4/randomization.md)
+  * [Endnote](notebooks/02/5/endnote.md)
+* [Programming in Python](notebooks/03/programming-in-python.md)
+  * [Expressions](notebooks/03/1/Expressions.ipynb)
+  * [Names](notebooks/03/2/Names.ipynb)
+    * [Example: Growth Rates](notebooks/03/2/1/Growth.ipynb)
+  * [Call Expressions](notebooks/03/3/Calls.ipynb)
+  * [Introduction to Tables](notebooks/03/4/Introduction_to_Tables.ipynb)
+* [Data Types](notebooks/04/Types.ipynb)
+  * [Numbers](notebooks/04/1/Numbers.ipynb)
+  * [Strings](notebooks/04/2/Strings.ipynb)
+    * [String Methods](notebooks/04/2/1/String_Methods.ipynb)
+  * [Comparisons](notebooks/04/3/Comparison.ipynb)

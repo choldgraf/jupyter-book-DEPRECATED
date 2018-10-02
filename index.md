@@ -1,3 +1,8 @@
+---
+layout: default
+next_page: '/ch/introduction/markdown'
+---
+
 # Principles and Techniques of Data Science
 
 **By [Sam Lau][sam], [Deb Nolan][deb], and [Joey Gonzalez][joey].**
@@ -21,3 +26,4 @@ To set up the textbook for local development, see the [the setup guide][setup].
 [ds100]: http://www.ds100.org/
 [setup]: https://github.com/DS-100/textbook/blob/master/SETUP.md
 [about]: /about_this_book
+

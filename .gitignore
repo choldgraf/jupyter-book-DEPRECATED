@@ -89,6 +89,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.vscode
+.ipynb_checkpoints
 
 # Spyder project settings
 .spyderproject
@@ -98,7 +100,7 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
-/site
+_site/
 
 # mypy
 .mypy_cache/
