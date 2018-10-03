@@ -5,7 +5,6 @@
  * [2] Sidebar toggling
  * [3] Sidebar scroll preserving
  * [4] Keyboard navigation
- * [5] nbinteract
  */
 
 const runWhenDOMLoaded = cb => {
@@ -131,30 +130,22 @@ document.addEventListener('keydown', event => {
 })
 
 /**
- * [5] Set up nbinteract to render widgets on page load
+  * [5] Set up copy/paste for code blocks
  */
+function addCopyButtonToCode(){
+  // get all <code> elements
+  var allCodeBlocksElements = $( "div.input_area code, div.highlighter-rouge code" );
 
-let interact
+  allCodeBlocksElements.each(function(ii) {
+    var currentId = "codeblock" + (ii + 1);
+    $(this).attr('id', currentId);
 
-const setupNbinteract = () => {
-  // If NbInteract hasn't loaded, wait one second and try again
-  if (window.NbInteract === undefined) {
-    setTimeout(setupNbinteract, 1000)
-    return
-  }
+    //trigger
+    var clipButton = '<a class="btn copybtn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></a>';
+        $(this).after(clipButton);
+    });
 
-  if (interact === undefined) {
-    console.log('Initializing nbinteract...')
-    interact = new window.NbInteract({
-      baseUrl: 'https://mybinder.org',
-      spec: 'DS-100/textbook/master',
-      provider: 'gh',
-    })
-    window.interact = interact
-  }
-
-  interact.prepare()
+    new Clipboard('.copybtn');
 }
-
-runWhenDOMLoaded(setupNbinteract)
-document.addEventListener('turbolinks:load', setupNbinteract)
+runWhenDOMLoaded(addCopyButtonToCode)
+document.addEventListener('turbolinks:load', addCopyButtonToCode)

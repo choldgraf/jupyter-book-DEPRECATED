@@ -46,3 +46,10 @@ $color-interact-button: #477dca !default;
   padding: $spacing-unit-tiny $spacing-unit;
   margin-bottom: $spacing-unit-small;
 }
+
+// If the interact button link is changed with a REST param
+div.interact-context {
+  display: inline;
+  padding-left: 1em;
+  font-weight: 600;
+}
