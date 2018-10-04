@@ -1,5 +1,5 @@
 ---
-interact_link: ch/01/3/Plotting_the_Classics.ipynb
+interact_link: notebooks/01/3/Plotting_the_Classics.ipynb
 title: 'Plotting the Classics'
 permalink: '/ch/01/3/Plotting_the_Classics'
 prev_page:

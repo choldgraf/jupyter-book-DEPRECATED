@@ -5,19 +5,8 @@
  * [2] Sidebar toggling
  * [3] Sidebar scroll preserving
  * [4] Keyboard navigation
+ * [5] Copy buttons for code blocks
  */
-
-const runWhenDOMLoaded = cb => {
-  if (document.readyState != 'loading') {
-    cb()
-  } else if (document.addEventListener) {
-    document.addEventListener('DOMContentLoaded', cb)
-  } else {
-    document.attachEvent('onreadystatechange', function() {
-      if (document.readyState == 'complete') cb()
-    })
-  }
-}
 
 const togglerId = 'js-sidebar-toggle'
 const textbookId = 'js-textbook'
@@ -134,18 +123,54 @@ document.addEventListener('keydown', event => {
  */
 function addCopyButtonToCode(){
   // get all <code> elements
-  var allCodeBlocksElements = $( "div.input_area code, div.highlighter-rouge code" );
+  var allCodeBlocksElements = $( "div.input_area code" );
 
   allCodeBlocksElements.each(function(ii) {
     var currentId = "codeblock" + (ii + 1);
     $(this).attr('id', currentId);
 
     //trigger
-    var clipButton = '<a class="btn copybtn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></a>';
+    var clipButton = '<a class="btn copybtn" data-clipboard-target="#' + currentId + '"><i class="fa fa-copy" alt="Copy to clipboard"></i></a>';
         $(this).after(clipButton);
-    });
+  });
 
-    new Clipboard('.copybtn');
+  // Tooltip functions
+  function setTooltip(btn, message) {
+    $(btn).tooltip('hide')
+      .attr('data-original-title', message)
+      .tooltip('show');
+  }
+
+  function hideTooltip(btn) {
+    setTimeout(function() {
+      $(btn).tooltip('hide');
+    }, 800);
+  }
+
+  $('.btn').tooltip({
+    trigger: 'click',
+    placement: 'bottom'
+  });
+
+  // tell clipboard.js to look for clicks that match this query
+  var clipboard = new Clipboard('.btn');
+
+  function clearSelection() {
+  if (window.getSelection) {window.getSelection().removeAllRanges();}
+  else if (document.selection) {document.selection.empty();}
+  }
+
+  clipboard.on('success', function(e) {
+    clearSelection();
+    setTooltip(e.trigger, 'Copied!');
+    hideTooltip(e.trigger);
+  });
+
+  clipboard.on('error', function(e) {
+    setTooltip(e.trigger, 'Failed!');
+    hideTooltip(e.trigger);
+  });
 }
+
 runWhenDOMLoaded(addCopyButtonToCode)
 document.addEventListener('turbolinks:load', addCopyButtonToCode)

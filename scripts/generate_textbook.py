@@ -107,16 +107,6 @@ def _copy_non_content_files():
         sh.copy2(ifile, new_path)
 
 
-def _between_symbols(string, c1, c2):
-    """Grab characters between symbols in a string.
-    Will return empty string if nothing is between c1 and c2."""
-    for char in [c1, c2]:
-        if char not in string:
-            raise ValueError("Couldn't find character {} in string {}".format(
-                char, string))
-    return string[string.index(c1)+1:string.index(c2)]
-
-
 if __name__ == '__main__':
     args = parser.parse_args()
     overwrite = bool(args.overwrite)
@@ -221,12 +211,13 @@ if __name__ == '__main__':
             build_call = '--FilesWriter.build_directory={}'.format(new_folder)
             # This is where images go - remove the _ so Jekyll will copy them over
             images_call = '--NbConvertApp.output_files_dir={}'.format(
-                op.join(IMAGES_FOLDER, new_folder.lstrip('_')))
+                op.join(IMAGES_FOLDER, new_folder.replace(SITE_ROOT, '').lstrip('/_')))
             call = ['jupyter', 'nbconvert', '--log-level="CRITICAL"',
                     '--to', 'markdown', '--template', TEMPLATE_PATH,
                     images_call, build_call, tmp_notebook]
             if execute is True:
                 call.insert(-1, '--execute')
+
             check_call(call)
             os.remove(tmp_notebook)
         elif link.endswith('.md'):
@@ -246,7 +237,7 @@ if __name__ == '__main__':
         yaml_fm += ['---']
 
         if link.endswith('.ipynb'):
-            yaml_fm += ['interact_link: {}'.format(link.lstrip('./'))]
+            yaml_fm += ['interact_link: {}'.format(link.lstrip('./').replace('ch/', 'notebooks/'))]
         yaml_fm += ["title: '{}'".format(title)]
         yaml_fm += ["permalink: '{}'".format(_prepare_link(link))]
         yaml_fm += ['prev_page:']

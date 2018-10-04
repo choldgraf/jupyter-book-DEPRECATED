@@ -1,5 +1,5 @@
 ---
-interact_link: ch/04/3/Comparison.ipynb
+interact_link: notebooks/04/3/Comparison.ipynb
 title: 'Comparisons'
 permalink: '/ch/04/3/Comparison'
 prev_page:

@@ -37,8 +37,7 @@ $sidebar-width: 260px;
   /* [2] */
   position: absolute;
   height: 100vh;
-  overflow: scroll;
-
+  overflow: auto;
   background-color: white; /* [3] */
 }
 

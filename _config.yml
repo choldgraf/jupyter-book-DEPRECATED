@@ -23,6 +23,13 @@ baseurl: "/jupyter-book" # the subpath of your site, e.g. /blog
 url: "https://predictablynoisy.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Textbook settings
+textbook_logo            : images/logo/logo.png  # A logo to be displayed at the top of your textbook sidebar
+hide_cell_text           : "# HIDDEN"  # When building the textbook, any cells with this text inside will be hidden in the output markdown
+hide_code_text           : "# NO CODE"  # When building the textbook, any cells with this text inside will have *only* their output shown (no code)
+css_url: "/assets/css" # Path to static CSS files
+js_url: "/assets/js" # Path to JS files
+
+# Interact link settings
 hub_url                  : "https://mybinder.org"  # The URL for your JupyterHub/BinderHub.
 hub_name                 : "JupyterHub"  # The name of your JupyterHub (used for the button in the NavBar. If an empty string, no button is shown)
 hub_type                 : "binder"  # ['binder', 'jupyterhub']  Whether to build interact links for a BinderHub or a JupyterHub
@@ -30,29 +37,26 @@ textbook_repo_base       : "https://github.com/"  # The site on which the textbo
 textbook_repo_org        : "choldgraf"  # The username or organization that owns this repository
 textbook_repo_name       : "jupyter-book"  # The name of the repository on the web
 textbook_repo_branch     : "master"  # The branch on which your textbook is hosted.
-number_chapters          : false  # Whether to number the chapers in the sidebar for the textbook
-chapter_titles           : true  # Whether to include the title of the chapter at the top of each chapter
-textbook_only            : false  # If 'true', the home page will be the first chapter of the textbook, and *only* the sidebar is shown
 use_jupyterlab           : false  # If 'true', interact links will use JupyterLab as the interface
-textbook_logo            : images/logo/logo.png  # A logo to be displayed at the top of your textbook sidebar
-hide_cell_text           : "# HIDDEN"  # When building the textbook, any cells with this text inside will be hidden in the output markdown
-hide_code_text           : "# NO CODE"  # When building the textbook, any cells with this text inside will have *only* their output shown (no code)
 interact_text            : "Interact"  # The text that interact buttons will contain.
-css_url: "/assets/css" # Path to static CSS files
-js_url: "/assets/js" # Path to JS files
 
-github_username: choldgraf
-
+# Site settings (only modify if you know what you're doing)
 defaults:
   - scope:
       path: "_ch"
     values:
       layout: "default"
+      toc: true
+      toc_label: "  On this page"
+      toc_icon: "list-ul"
   - scope:
       path: ""
       type: "pages"
     values:
       layout: "default"
+      toc: true
+      toc_label: "  On this page"
+      toc_icon: "list-ul"
 
 collections:
   ch:

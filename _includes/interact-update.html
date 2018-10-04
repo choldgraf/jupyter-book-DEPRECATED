@@ -103,7 +103,7 @@ function updateInteractLink() {
       addParamToInternalLinks(hubUrl);
     }
 }
-// runWhenDOMLoaded is defined in scripts.js and loaded first
+
 runWhenDOMLoaded(updateInteractLink)
 document.addEventListener('turbolinks:load', updateInteractLink)
 </script>

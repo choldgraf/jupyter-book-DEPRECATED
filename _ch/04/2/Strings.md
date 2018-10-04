@@ -1,5 +1,5 @@
 ---
-interact_link: ch/04/2/Strings.ipynb
+interact_link: notebooks/04/2/Strings.ipynb
 title: 'Strings'
 permalink: '/ch/04/2/Strings'
 prev_page:

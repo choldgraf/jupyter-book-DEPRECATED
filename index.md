@@ -1,29 +1,40 @@
 ---
 layout: default
-next_page: '/ch/introduction/markdown'
+next_page:
+  url: /ch/introduction/markdown
+  title: 'Adding markdown files'
 ---
 
-# Principles and Techniques of Data Science
+# Textbooks with Jupyter and Jekyll
 
-**By [Sam Lau][sam], [Deb Nolan][deb], and [Joey Gonzalez][joey].**
+**By [Sam Lau][sam] and [Chris Holdgraf][chris]**
 
-This is the textbook for
-[Data 100, the Principles and Techniques of Data Science course at UC Berkeley][ds100].
+This repository / website is a template for hosting your own textbook using
+Jupyter Notebooks and Jekyll.
 
-Data 100 is the upper-division, semester-long data science course that follows
-[Data 8, the Foundations of Data Science][data8]. The reader's assumed
-background is detailed in the [About This Book][about] page.
+Here are some highlights:
 
-The contents of this book are licensed for free consumption under the following license:
-[Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+* All course content is written in markdown and Jupyter Notebooks, stored in `notebooks/`
+* This site comes packaged with helper scripts to convert these into Jekyll pages (in `scripts/`)
+* Pages can have [Binder](https://mybinder.org) or JupyterHub links automatically added for interactivity.
+* The website itself is based on Jekyll, and is highly extensible and can be freely-hosted on GitHub.
 
-To set up the textbook for local development, see the [the setup guide][setup].
+This repository comes with some sample textbook files from the Data 8 course
+for Data Science at UC Berkeley. You can update these materials and all site
+content with your own, and have a Jupyter-based textbook ready to go shortly!
+
+Here are a few links of interest:
+
+* **[A short guide to deploying your own textbook](https://predictablynoisy.com/textbooks-with-jupyter/guide/01_overview/)**
+* **[The github repository for the guide and demo](https://github.com/choldgraf/textbooks-with-jupyter)**
+
+
+## To get started
+
+* **To see a demo of the textbook, click the "textbook" link above**.
+* **To start building your own Jupyter textbook**, click **[guide](https://predictablynoisy.com/textbooks-with-jupyter/guide/01_overview)**
+  in the navbar above.
+
 
 [sam]: http://www.samlau.me/
-[joey]: https://people.eecs.berkeley.edu/~jegonzal/
-[deb]: https://www.stat.berkeley.edu/~nolan/
-[data8]: http://data8.org/
-[ds100]: http://www.ds100.org/
-[setup]: https://github.com/DS-100/textbook/blob/master/SETUP.md
-[about]: /about_this_book
-
+[chris]: https://predictablynoisy.com

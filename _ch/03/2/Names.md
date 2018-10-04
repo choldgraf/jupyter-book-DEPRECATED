@@ -1,5 +1,5 @@
 ---
-interact_link: ch/03/2/Names.ipynb
+interact_link: notebooks/03/2/Names.ipynb
 title: 'Names'
 permalink: '/ch/03/2/Names'
 prev_page:

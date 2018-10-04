@@ -31,6 +31,9 @@
 
 - divider: true
 
+- title: Demo textbook
+  not_numbered: true
+
 - title: Data Science
   url: /ch/01/what-is-data-science
   sections:

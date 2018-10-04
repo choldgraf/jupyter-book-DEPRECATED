@@ -1,5 +1,5 @@
 ---
-interact_link: ch/introduction/notebooks.ipynb
+interact_link: notebooks/introduction/notebooks.ipynb
 title: 'Adding notebooks'
 permalink: '/ch/introduction/notebooks'
 prev_page:
@@ -81,7 +81,7 @@ ax.legend(custom_lines, ['Cold', 'Medium', 'Hot']);
 
 
 
-![png](/mnt/c/Users/chold/github/forks/python/teaching/dsep/jupyter-textbook/_ch/introduction/notebooks_2_0.png)
+![png](../../images/ch/introduction/notebooks_2_0.png)
 
 
 Note that the image above is captured and displayed by Jekyll.
@@ -101,7 +101,7 @@ which you can [see in the original notebook](https://github.com/choldgraf/textbo
 
 
 
-![png](/mnt/c/Users/chold/github/forks/python/teaching/dsep/jupyter-textbook/_ch/introduction/notebooks_6_0.png)
+![png](../../images/ch/introduction/notebooks_6_0.png)
 
 
 And here we'll *only* display a Pandas DataFrame. Again, this was generated with Python code

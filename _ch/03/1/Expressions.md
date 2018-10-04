@@ -1,5 +1,5 @@
 ---
-interact_link: ch/03/1/Expressions.ipynb
+interact_link: notebooks/03/1/Expressions.ipynb
 title: 'Expressions'
 permalink: '/ch/03/1/Expressions'
 prev_page:

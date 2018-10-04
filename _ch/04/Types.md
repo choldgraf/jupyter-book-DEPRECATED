@@ -1,5 +1,5 @@
 ---
-interact_link: ch/04/Types.ipynb
+interact_link: notebooks/04/Types.ipynb
 title: 'Data Types'
 permalink: '/ch/04/Types'
 prev_page:

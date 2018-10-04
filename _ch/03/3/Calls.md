@@ -1,5 +1,5 @@
 ---
-interact_link: ch/03/3/Calls.ipynb
+interact_link: notebooks/03/3/Calls.ipynb
 title: 'Call Expressions'
 permalink: '/ch/03/3/Calls'
 prev_page:

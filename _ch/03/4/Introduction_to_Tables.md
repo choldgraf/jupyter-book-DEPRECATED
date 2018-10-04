@@ -1,5 +1,5 @@
 ---
-interact_link: ch/03/4/Introduction_to_Tables.ipynb
+interact_link: notebooks/03/4/Introduction_to_Tables.ipynb
 title: 'Introduction to Tables'
 permalink: '/ch/03/4/Introduction_to_Tables'
 prev_page:
