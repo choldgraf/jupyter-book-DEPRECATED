@@ -7,6 +7,7 @@ prev_page:
 next_page:
   url: /ch/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump
   title: 'John Snow and the Broad Street Pump'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 Causality and Experiments
 ======================

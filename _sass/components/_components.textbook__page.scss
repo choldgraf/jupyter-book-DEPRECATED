@@ -34,6 +34,11 @@
     /* [2] */
     outline: none;
   }
+
+  // Left margin if site is big enough
+  @media (min-width: $site-margin-min-width) {
+    margin-left: $left-site-margin;
+  }
 }
 
 // To ensure enough room for the sidebar

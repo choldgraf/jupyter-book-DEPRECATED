@@ -7,6 +7,7 @@ prev_page:
 next_page:
   url: /ch/02/2/snow-s-grand-experiment
   title: 'Snow’s “Grand Experiment”'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 Observation and Visualization: John Snow and the Broad Street Pump
 ------------------------------------------------------------------

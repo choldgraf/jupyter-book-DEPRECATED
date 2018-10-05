@@ -7,6 +7,7 @@ prev_page:
 next_page:
   url: /ch/03/programming-in-python
   title: 'Programming in Python'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 Endnote
 -------

@@ -1,23 +1,29 @@
-# Principles and Techniques of Data Science
+# The Jupyter Book template
 
-**By [Sam Lau][sam], [Deb Nolan][deb], and [Joey Gonzalez][joey].**
+This repository / website is a template for creating your own Jupyter Book. It is
+meant to be paired with the **[Jupyter Book Guide](https://predictablynoisy.com/jupyter-book-guide)**. Check out that page for instructions
+on how to fork/modify this template repository for your own book.
 
-This is the textbook for
-[Data 100, the Principles and Techniques of Data Science course at UC Berkeley][ds100].
+See the [live demo of the template here](https://predictablynoisy.com/jupyter-book).
 
-Data 100 is the upper-division, semester-long data science course that follows
-[Data 8, the Foundations of Data Science][data8]. The reader's assumed
-background is detailed in the [About This Book][about] page.
+## Explore this book
 
-The contents of this book are licensed for free consumption under the following license:
-[Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+This website is an example of a Jupyter Book. You can explore the chapters of the book
+by clicking on links in the sidebar to the left. Or, you can move linearly forward and
+backwards by clicking the left/right arrow on your computer.
 
-To set up the textbook for local development, see the [the setup guide][setup].
+## Contribute or improve the book
+
+Notice some inefficient CSS? A typo in the text? Want to add a cool feature so that others
+can enjoy the improvements to Jupyter Books? Don't hesitate to [open an issue or a PR on the
+Jupyter Book template repo](https://github.com/choldgraf/jupyter-book). We'd love your
+help!
+
+## Acknowledgements
+
+Jupyter Books was originally created by [Sam Lau][sam] and [Chris Holdgraf][chris]
+with support of the **UC Berkeley Data Science Education Program and the Berkeley
+Institute for Data Science**.
 
 [sam]: http://www.samlau.me/
-[joey]: https://people.eecs.berkeley.edu/~jegonzal/
-[deb]: https://www.stat.berkeley.edu/~nolan/
-[data8]: http://data8.org/
-[ds100]: http://www.ds100.org/
-[setup]: https://github.com/DS-100/textbook/blob/master/SETUP.md
-[about]: /about_this_book
+[chris]: https://predictablynoisy.com

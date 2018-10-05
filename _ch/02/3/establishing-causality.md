@@ -7,6 +7,7 @@ prev_page:
 next_page:
   url: /ch/02/4/randomization
   title: 'Randomization'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 Establishing Causality
 ----------------------

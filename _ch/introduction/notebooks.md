@@ -8,6 +8,7 @@ prev_page:
 next_page:
   url: /ch/01/what-is-data-science
   title: 'Data Science'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 
 # Content with notebooks

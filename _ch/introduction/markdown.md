@@ -7,6 +7,7 @@ prev_page:
 next_page:
   url: /ch/introduction/notebooks
   title: 'Adding notebooks'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 # Creating course content
 

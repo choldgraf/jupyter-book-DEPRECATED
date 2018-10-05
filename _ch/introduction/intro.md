@@ -5,8 +5,9 @@ prev_page:
   url: /
   title: 'Home'
 next_page:
-  url: /ch/introduction/intro
-  title: 'Quickstart'
+  url: /ch/introduction/markdown
+  title: 'Adding markdown files'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 # The Textbooks with Jupyter and Jekyll demo
 

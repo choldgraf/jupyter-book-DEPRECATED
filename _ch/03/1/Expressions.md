@@ -8,6 +8,7 @@ prev_page:
 next_page:
   url: /ch/03/2/Names
   title: 'Names'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 
 # 3.1 Expressions

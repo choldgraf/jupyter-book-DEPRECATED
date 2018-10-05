@@ -8,6 +8,7 @@ prev_page:
 next_page:
   url: /ch/04/Types
   title: 'Data Types'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 
 We can now apply Python to analyze data. We will work with data stored in Table structures.

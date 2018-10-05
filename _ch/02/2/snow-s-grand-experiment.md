@@ -7,6 +7,7 @@ prev_page:
 next_page:
   url: /ch/02/3/establishing-causality
   title: 'Establishing Causality'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 Snow’s “Grand Experiment”
 -------------------------

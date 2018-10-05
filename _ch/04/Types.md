@@ -8,6 +8,7 @@ prev_page:
 next_page:
   url: /ch/04/1/Numbers
   title: 'Numbers'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 
 Every value has a type, and the built-in `type` function returns the type of the result of any expression.

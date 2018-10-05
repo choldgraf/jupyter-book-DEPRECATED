@@ -76,7 +76,7 @@ def _clean_lines(lines, filepath):
         path_rel_root = op.relpath(SITE_ROOT, op.dirname(filepath))
         line = line.replace(IMAGES_FOLDER, op.join(path_rel_root, 'images'))
 
-        # Adding escape slashes since Jekyll removes them
+        # Adding escape slashes since Jekyll removes them when it serves the page
         # Make sure we have at least two dollar signs and they
         # Aren't right next to each other
         dollars = np.where(['$' == char for char in line])[0]
@@ -246,7 +246,7 @@ if __name__ == '__main__':
         yaml_fm += ['next_page:']
         yaml_fm += ['  url: {}'.format(_prepare_link(next_page_link).replace('"', "'"))]
         yaml_fm += ["  title: '{}'".format(next_file_title)]
-        yaml_fm += ["comment: ***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"]
+        yaml_fm += ['comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"']
         yaml_fm += ['---']
         yaml_fm = [ii + '\n' for ii in yaml_fm]
         lines = yaml_fm + lines

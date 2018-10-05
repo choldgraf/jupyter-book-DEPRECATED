@@ -7,6 +7,7 @@ prev_page:
 next_page:
   url: /ch/01/3/Plotting_the_Classics
   title: 'Plotting the Classics'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 Why Data Science?
 =================

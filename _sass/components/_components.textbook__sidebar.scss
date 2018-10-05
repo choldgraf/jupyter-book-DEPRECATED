@@ -25,6 +25,11 @@ $color-sidebar-divider: #bbb !default;
   &:hover {
     opacity: 1;
   }
+  
+  // Left margin if site is big enough
+  @media (min-width: $site-margin-min-width) {
+    margin-left: $left-site-margin;
+  }
 }
 
 /* [1] */

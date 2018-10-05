@@ -7,6 +7,7 @@ prev_page:
 next_page:
   url: /ch/01/2/why-data-science
   title: 'Why Data Science?'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 Chapter 1: Introduction
 =======================

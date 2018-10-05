@@ -7,6 +7,7 @@ prev_page:
 next_page:
   url: /ch/02/5/endnote
   title: 'Endnote'
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 Randomization
 --------------
