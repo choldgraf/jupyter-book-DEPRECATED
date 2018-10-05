@@ -104,3 +104,7 @@ _site/
 
 # mypy
 .mypy_cache/
+
+.sass-cache
+.jekyll-metadata
+
