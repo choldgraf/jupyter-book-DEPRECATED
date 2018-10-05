@@ -2,14 +2,14 @@
  * Styling for the sidebar.
  *
  * [1]: The sidebar is implemented as ul and li elements so we need to remove
- *   the bullets and margins.
+ *   the bullets and margins. Also make chapter fonts a bit bigger.
  * [2]: The entries are <a> tags so we need to remove the default styling.
  * [3]: The sidebar divider is just an empty element with a border.
  * [4]: The current section needs a higher specificity to override the :hover
  *   selectors used previously.
  * [5]: The logo displayed above the sidebar
  */
-$color-sidebar-bg: #fafafa !default;
+$color-sidebar-bg: rgba(255, 255, 255, 0) !default;
 $color-sidebar-entry: #364149 !default;
 $color-sidebar-entry--active: $color-links !default;
 $color-sidebar-divider: #bbb !default;
@@ -19,6 +19,12 @@ $color-sidebar-divider: #bbb !default;
   padding: $spacing-unit-small;
   @include inuit-font-size(14px);
   border-right: 1px solid rgba(0, 0, 0, 0.07);
+  opacity: .6;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 /* [1] */
@@ -26,6 +32,10 @@ $color-sidebar-divider: #bbb !default;
   list-style: none;
   margin-left: 0;
   margin-bottom: 0;
+}
+
+li.c-sidebar__chapter > a {
+  font-size: 1.2em;
 }
 
 /* [1] */

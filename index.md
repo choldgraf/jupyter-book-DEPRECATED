@@ -5,36 +5,30 @@ next_page:
   title: 'Adding markdown files'
 ---
 
-# Textbooks with Jupyter and Jekyll
+# The Jupyter Book template
 
-**By [Sam Lau][sam] and [Chris Holdgraf][chris]**
+This repository / website is a template for creating your own Jupyter Book. It is
+meant to be paired with the **[Jupyter Book Guide](https://predictablynoisy.com/jupyter-book-guide)**. Check out that page for instructions
+on how to fork/modify this template repository for your own book.
 
-This repository / website is a template for hosting your own textbook using
-Jupyter Notebooks and Jekyll.
+## Explore this book
 
-Here are some highlights:
+This website is an example of a Jupyter Book. You can explore the chapters of the book
+by clicking on links in the sidebar to the left. Or, you can move linearly forward and
+backwards by clicking the left/right arrow on your computer.
 
-* All course content is written in markdown and Jupyter Notebooks, stored in `notebooks/`
-* This site comes packaged with helper scripts to convert these into Jekyll pages (in `scripts/`)
-* Pages can have [Binder](https://mybinder.org) or JupyterHub links automatically added for interactivity.
-* The website itself is based on Jekyll, and is highly extensible and can be freely-hosted on GitHub.
+## Contribute or improve the book
 
-This repository comes with some sample textbook files from the Data 8 course
-for Data Science at UC Berkeley. You can update these materials and all site
-content with your own, and have a Jupyter-based textbook ready to go shortly!
+Notice some inefficient CSS? A typo in the text? Want to add a cool feature so that others
+can enjoy the improvements to Jupyter Books? Don't hesitate to [open an issue or a PR on the
+Jupyter Book template repo](https://github.com/choldgraf/jupyter-book). We'd love your
+help!
 
-Here are a few links of interest:
+## Acknowledgements
 
-* **[A short guide to deploying your own textbook](https://predictablynoisy.com/textbooks-with-jupyter/guide/01_overview/)**
-* **[The github repository for the guide and demo](https://github.com/choldgraf/textbooks-with-jupyter)**
-
-
-## To get started
-
-* **To see a demo of the textbook, click the "textbook" link above**.
-* **To start building your own Jupyter textbook**, click **[guide](https://predictablynoisy.com/textbooks-with-jupyter/guide/01_overview)**
-  in the navbar above.
-
+Jupyter Books was originally created by [Sam Lau][sam] and [Chris Holdgraf][chris]
+with support of the **UC Berkeley Data Science Education Program and the Berkeley
+Institute for Data Science**.
 
 [sam]: http://www.samlau.me/
 [chris]: https://predictablynoisy.com

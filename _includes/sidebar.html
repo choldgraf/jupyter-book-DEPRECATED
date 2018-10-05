@@ -59,7 +59,7 @@ a 1-level nesting; we will label 1.2, but not 1.2.1.
             | where_exp: "sec", "sec.url == page.url"
             | size
           %}
-          {% if any_section_active > 0 %}
+          {% if any_section_active > 0 or site.collapse_inactive_chapters == false %}
             {% assign hide_section_class = "" %}
           {% else %}
             {% assign hide_section_class = "u-hidden-visually" %}

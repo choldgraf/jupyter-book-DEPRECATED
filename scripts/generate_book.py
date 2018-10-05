@@ -246,6 +246,7 @@ if __name__ == '__main__':
         yaml_fm += ['next_page:']
         yaml_fm += ['  url: {}'.format(_prepare_link(next_page_link).replace('"', "'"))]
         yaml_fm += ["  title: '{}'".format(next_file_title)]
+        yaml_fm += ["comment: ***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"]
         yaml_fm += ['---']
         yaml_fm = [ii + '\n' for ii in yaml_fm]
         lines = yaml_fm + lines
