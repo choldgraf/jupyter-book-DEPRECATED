@@ -28,7 +28,7 @@ hide_cell_text           : "# HIDDEN"  # When building the textbook, any cells w
 hide_code_text           : "# NO CODE"  # When building the textbook, any cells with this text inside will have *only* their output shown (no code)
 css_url: "/assets/css" # Path to static CSS files
 js_url: "/assets/js" # Path to JS files
-collapse_inactive_chapters: False  # Whether to collapse the inactive chapters in the sidebar
+collapse_inactive_chapters: true  # Whether to collapse the inactive chapters in the sidebar
 
 # Interact link settings
 hub_url                  : "https://mybinder.org"  # The URL for your JupyterHub/BinderHub.
