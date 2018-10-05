@@ -17,4 +17,4 @@ clean:
 	python scripts/clean.py
 
 serve:
-	bundle exec jekyll serve
+	bundle exec guard
