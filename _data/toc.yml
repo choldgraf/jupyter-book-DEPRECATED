@@ -27,9 +27,32 @@
   - title: Adding notebooks
     url: /ch/introduction/notebooks
     not_numbered: true
-  - title: Structure of Jupyter Books
-    url: /ch/introduction/structure
+
+- title: Guide
+  url: /ch/guide/00_intro
+  title: Deployment Guide
+  not_numbered: true
+  sections:
+  - title: Overview
+    url: /ch/guide/01_overview
     not_numbered: true
+  - title: Setup and Install
+    url: /ch/guide/02_setup
+    not_numbered: true
+  - title: Configuration
+    url: /ch/guide/03_configure
+    not_numbered: true
+  - title: Build your book
+    url: /ch/guide/04_build
+    not_numbered: true
+  - title: Publish your book
+    url: /ch/guide/05_publish
+    not_numbered: true
+  - title: FAQ
+    url: /ch/guide/06_faq
+    not_numbered: true
+  - title: Advanced
+    url: /ch/guide/07_advanced
 
 - divider: true
 

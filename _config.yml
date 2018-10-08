@@ -44,20 +44,13 @@ interact_text            : "Interact"  # The text that interact buttons will con
 # Site settings (only modify if you know what you're doing)
 defaults:
   - scope:
-      path: "_ch"
-    values:
-      layout: "default"
-      toc: true
-      toc_label: "  On this page"
-      toc_icon: "list-ul"
-  - scope:
       path: ""
-      type: "pages"
     values:
       layout: "default"
       toc: true
       toc_label: "  On this page"
       toc_icon: "list-ul"
+
 collections:
   ch:
     output: true

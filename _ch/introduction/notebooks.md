@@ -6,8 +6,8 @@ prev_page:
   url: /ch/introduction/markdown
   title: 'Adding markdown files'
 next_page:
-  url: /ch/introduction/structure
-  title: 'Structure of Jupyter Books'
+  url: /ch/guide/00_intro
+  title: 'Deployment Guide'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 
