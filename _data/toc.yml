@@ -24,15 +24,14 @@
   - title: Adding markdown files
     url: /ch/introduction/markdown
     not_numbered: true
-
   - title: Adding notebooks
     url: /ch/introduction/notebooks
     not_numbered: true
+  - title: Structure of Jupyter Books
+    url: /ch/introduction/structure
+    not_numbered: true
 
 - divider: true
-
-- title: Demo textbook
-  not_numbered: true
 
 - title: Data Science
   url: /ch/01/what-is-data-science
@@ -43,6 +42,11 @@
     url: /ch/01/2/why-data-science
   - title: Plotting the Classics
     url: /ch/01/3/Plotting_the_Classics
+    subsections:
+    - title: Subsection Demo 1
+      url: /ch/01/3/subsection/subsections
+    - title: Subsection Demo 2
+      url: /ch/01/3/subsection/subsectiontwo
 
 - title: Causality and Experiments
   url: /ch/02/causality-and-experiments

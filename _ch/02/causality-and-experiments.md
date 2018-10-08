@@ -2,8 +2,8 @@
 title: 'Causality and Experiments'
 permalink: '/ch/02/causality-and-experiments'
 prev_page:
-  url: /ch/01/3/Plotting_the_Classics
-  title: 'Plotting the Classics'
+  url: /ch/01/3/subsection/subsectiontwo
+  title: 'Subsection Demo 2'
 next_page:
   url: /ch/02/1/observation-and-visualization-john-snow-and-the-broad-street-pump
   title: 'John Snow and the Broad Street Pump'

@@ -6,8 +6,8 @@ prev_page:
   url: /ch/introduction/markdown
   title: 'Adding markdown files'
 next_page:
-  url: /ch/01/what-is-data-science
-  title: 'Data Science'
+  url: /ch/introduction/structure
+  title: 'Structure of Jupyter Books'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 

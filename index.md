@@ -1,8 +1,8 @@
 ---
 layout: default
 next_page:
-  url: /ch/introduction/markdown
-  title: 'Adding markdown files'
+  url: /ch/introduction/intro
+  title: 'Introduction'
 ---
 
 # The Jupyter Book template

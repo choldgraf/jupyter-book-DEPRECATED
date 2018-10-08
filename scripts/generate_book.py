@@ -31,7 +31,12 @@ def _prepare_toc(toc):
         if sections is None:
             continue
         for jj in sections:
+            subsections = jj.pop('subsections', None)
             new_toc.append(jj)
+            if subsections is None:
+                continue
+            for kk in subsections:
+                new_toc.append(kk)
     return new_toc
 
 
@@ -141,7 +146,7 @@ if __name__ == '__main__':
     # --- Loop through all ipynb/md files, convert to md as necessary and copy. ---
     n_skipped_files = 0
     n_built_files = 0
-
+    print("Converting and copy notebook/md files...")
     for ix_file, page in enumerate(tqdm(list(toc))):
         link = page.get('url', None)
         title = page.get('title', None)
@@ -256,13 +261,15 @@ if __name__ == '__main__':
             ff.writelines(lines)
         n_built_files += 1
 
-    print("\n***\nGenerated {} new files\nSkipped {} already-built files".format(n_built_files, n_skipped_files))
-    if n_built_files == 0:
-        print("\nDelete the markdown files in '{}' for any pages that you wish to re-build.".format(TEXTBOOK_FOLDER_NAME))
-    print('***\n')
-
     # Copy non-markdown files in notebooks/ in case they're referenced in the notebooks
     print('Copying non-content files inside `notebooks/`...')
     _copy_non_content_files()
 
-    print('Done!')
+    # Message at the end
+    print("\n===========")
+    print("Generated {} new files\nSkipped {} already-built files".format(n_built_files, n_skipped_files))
+    if n_built_files == 0:
+        print("Delete the markdown files in '{}' for any pages that you wish to re-build.".format(TEXTBOOK_FOLDER_NAME))
+    print("\nYour Jupyter Book is now in `_ch/`. Don't forget to link to these files in your `toc.yml` file!")
+    print('===========\n')
+
