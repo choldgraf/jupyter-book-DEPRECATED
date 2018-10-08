@@ -31,7 +31,12 @@ def _prepare_toc(toc):
         if sections is None:
             continue
         for jj in sections:
+            subsections = jj.pop('subsections', None)
             new_toc.append(jj)
+            if subsections is None:
+                continue
+            for kk in subsections:
+                new_toc.append(kk)
     return new_toc
 
 

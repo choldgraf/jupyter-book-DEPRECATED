@@ -31,9 +31,6 @@
 
 - divider: true
 
-- title: Demo textbook
-  not_numbered: true
-
 - title: Data Science
   url: /ch/01/what-is-data-science
   sections:
@@ -43,6 +40,11 @@
     url: /ch/01/2/why-data-science
   - title: Plotting the Classics
     url: /ch/01/3/Plotting_the_Classics
+    subsections:
+    - title: Subsection Demo 1
+      url: /ch/01/3/subsection/subsections
+    - title: Subsection Demo 2
+      url: /ch/01/3/subsection/subsectiontwo
 
 - title: Causality and Experiments
   url: /ch/02/causality-and-experiments

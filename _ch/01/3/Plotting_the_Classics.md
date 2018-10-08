@@ -6,8 +6,8 @@ prev_page:
   url: /ch/01/2/why-data-science
   title: 'Why Data Science?'
 next_page:
-  url: /ch/02/causality-and-experiments
-  title: 'Causality and Experiments'
+  url: /ch/01/3/subsection/subsections
+  title: 'Subsection Demo 1'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE FILES IN /NOTEBOOKS***"
 ---
 
