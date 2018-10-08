@@ -22,6 +22,7 @@ function getJsonFromUrl(url) {
 // Parse a Binder URL, converting it to the string needed for JupyterHub
 function binder2Jupyterhub(url) {
   newUrl = {};
+  console.log(url)
   parts = url.split('v2/gh/')[1];
   // Grab the base repo information
   repoinfo = parts.split('?')[0];
@@ -86,11 +87,20 @@ function updateInteractLink() {
           var hub_type = '{{ site.hub_type }}';
           if (hub_type === 'binder') {
             // If binder links exist, we need to re-work them for jupyterhub
-            first = [hubUrl, 'hub', 'user-redirect', 'git-sync'].join('/')
+            if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+              // If localhost, assume we're working from a local Jupyter server and remove `/hub`
+              first = [hubUrl, 'git-sync'].join('/')
+            } else {
+              first = [hubUrl, 'hub', 'user-redirect', 'git-sync'].join('/')
+            }
             href = first + '?' + binder2Jupyterhub(href);
           } else {
             // If JupyterHub links, we only need to replace the hub url
             href = href.replace("{{ site.hub_url }}", hubUrl);
+            if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+              // Assume we're working from a local Jupyter server and remove `/hub`
+              href = href.replace("/hub/user-redirect", "");
+            }
           }
           link.setAttribute('href', decodeURIComponent(href));
 
