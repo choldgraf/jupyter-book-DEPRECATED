@@ -2,8 +2,8 @@
 title: 'Data Science'
 permalink: '/ch/01/what-is-data-science'
 prev_page:
-  url: /ch/introduction/notebooks
-  title: 'Adding notebooks'
+  url: /ch/introduction/structure
+  title: 'Structure of Jupyter Books'
 next_page:
   url: /ch/01/1/intro
   title: 'Introduction'

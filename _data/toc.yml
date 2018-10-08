@@ -24,9 +24,11 @@
   - title: Adding markdown files
     url: /ch/introduction/markdown
     not_numbered: true
-
   - title: Adding notebooks
     url: /ch/introduction/notebooks
+    not_numbered: true
+  - title: Structure of Jupyter Books
+    url: /ch/introduction/structure
     not_numbered: true
 
 - divider: true
