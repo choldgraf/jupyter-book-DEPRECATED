@@ -58,10 +58,11 @@ defaults:
       toc: true
       toc_label: "  On this page"
       toc_icon: "list-ul"
-
 collections:
   ch:
     output: true
+
+favicon_path: "images/logo/favicon.ico"
 
 # Markdown Processing
 markdown: kramdown
