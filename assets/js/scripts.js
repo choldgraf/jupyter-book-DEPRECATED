@@ -119,58 +119,56 @@ document.addEventListener('keydown', event => {
 })
 
 /**
-  * [5] Set up copy/paste for code blocks
+ * [5] Set up copy/paste for code blocks
  */
-function addCopyButtonToCode(){
-  // get all <code> elements
-  var allCodeBlocksElements = $( "div.input_area code" );
+const codeCellId = index => `codecell${index}`
 
-  allCodeBlocksElements.each(function(ii) {
-    var currentId = "codeblock" + (ii + 1);
-    $(this).attr('id', currentId);
+const clipboardButton = id =>
+  `<a class="btn copybtn o-tooltip--left" data-tooltip="Copy" data-clipboard-target="#${id}">
+    <img src="https://predictablynoisy.com/jupyter-book/assets/copy-button.svg" alt="Copy to clipboard">
+  </a>`
 
-    //trigger
-    var clipButton = '<a class="btn copybtn" data-clipboard-target="#' + currentId + '"><i class="fa fa-copy" alt="Copy to clipboard"></i></a>';
-        $(this).after(clipButton);
-  });
-
-  // Tooltip functions
-  function setTooltip(btn, message) {
-    $(btn).tooltip('hide')
-      .attr('data-original-title', message)
-      .tooltip('show');
+// Clears selected text since ClipboardJS will select the text when copying
+const clearSelection = () => {
+  if (window.getSelection) {
+    window.getSelection().removeAllRanges()
+  } else if (document.selection) {
+    document.selection.empty()
   }
-
-  function hideTooltip(btn) {
-    setTimeout(function() {
-      $(btn).tooltip('hide');
-    }, 800);
-  }
-
-  $('.btn').tooltip({
-    trigger: 'click',
-    placement: 'bottom'
-  });
-
-  // tell clipboard.js to look for clicks that match this query
-  var clipboard = new Clipboard('.btn');
-
-  function clearSelection() {
-  if (window.getSelection) {window.getSelection().removeAllRanges();}
-  else if (document.selection) {document.selection.empty();}
-  }
-
-  clipboard.on('success', function(e) {
-    clearSelection();
-    setTooltip(e.trigger, 'Copied!');
-    hideTooltip(e.trigger);
-  });
-
-  clipboard.on('error', function(e) {
-    setTooltip(e.trigger, 'Failed!');
-    hideTooltip(e.trigger);
-  });
 }
 
-runWhenDOMLoaded(addCopyButtonToCode)
-document.addEventListener('turbolinks:load', addCopyButtonToCode)
+// Changes tooltip text for two seconds, then changes it back
+const temporarilyChangeTooltip = (el, newText) => {
+  const oldText = el.getAttribute('data-tooltip')
+  el.setAttribute('data-tooltip', newText)
+  setTimeout(() => el.setAttribute('data-tooltip', oldText), 2000)
+}
+
+const addCopyButtonToCodeCells = () => {
+  // If ClipboardJS hasn't loaded, wait a bit and try again. This
+  // happens because we load ClipboardJS asynchronously.
+  if (window.ClipboardJS === undefined) {
+    setTimeout(addCopyButtonToCodeCells, 250)
+    return
+  }
+
+  const codeCells = document.querySelectorAll('.input_area pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    codeCell.insertAdjacentHTML('afterend', clipboardButton(id))
+  })
+
+  const clipboard = new ClipboardJS('.copybtn')
+  clipboard.on('success', event => {
+    clearSelection()
+    temporarilyChangeTooltip(event.trigger, 'Copied!')
+  })
+
+  clipboard.on('error', event => {
+    temporarilyChangeTooltip(event.trigger, 'Failed to copy')
+  })
+}
+
+runWhenDOMLoaded(addCopyButtonToCodeCells)
+document.addEventListener('turbolinks:load', addCopyButtonToCodeCells)
