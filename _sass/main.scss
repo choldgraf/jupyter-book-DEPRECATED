@@ -95,14 +95,17 @@ $hamburger-layer-color: $color-text;
 $hamburger-types: (arrowalt);
 @import 'hamburgers/hamburgers';
 
+@import 'objects/objects.tooltip';
+@import 'objects/objects.copy-button';
+
 // COMPONENTS
+
 @import 'components/components.textbook';
 @import 'components/components.textbook__sidebar';
 @import 'components/components.textbook__page';
 @import 'components/components.page__nav';
 @import 'components/components.sidebar-toggle';
 @import 'components/components.interact-button';
-@import 'components/components.copy-button';
 @import 'components/components.textbook__sidebar-right';
 
 // UTILITIES
