@@ -168,6 +168,11 @@ const addCopyButtonToCodeCells = () => {
   clipboard.on('error', event => {
     temporarilyChangeTooltip(event.trigger, 'Failed to copy')
   })
+
+  // Get rid of clipboard before the next page visit to avoid memory leak
+  document.addEventListener('turbolinks:before-visit', () =>
+    clipboard.destroy()
+  )
 }
 
 runWhenDOMLoaded(addCopyButtonToCodeCells)
