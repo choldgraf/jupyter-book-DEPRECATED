@@ -47,7 +47,7 @@ def _prepare_link(link):
     if not link.startswith('/'):
         link = '/' + link
     link = link.replace(NOTEBOOKS_FOLDER_NAME + os.sep,
-                        TEXTBOOK_FOLDER_NAME.lstrip('_') + os.sep)
+                        TEXTBOOK_FOLDER_NAME_URL + os.sep)
     return link
 
 
@@ -124,9 +124,7 @@ if __name__ == '__main__':
     TOC_YAML = op.join(SITE_ROOT, '_data', 'toc.yml')
     CONFIG_FILE = op.join(SITE_ROOT, '_config.yml')
     TEMPLATE_PATH = op.join(SITE_ROOT, 'assets', 'templates', 'jekyllmd.tpl')
-    TEXTBOOK_FOLDER_NAME = '_ch'
     NOTEBOOKS_FOLDER_NAME = 'notebooks'
-    TEXTBOOK_FOLDER = op.join(SITE_ROOT, TEXTBOOK_FOLDER_NAME)
     NOTEBOOKS_FOLDER = op.join(SITE_ROOT, NOTEBOOKS_FOLDER_NAME)
     IMAGES_FOLDER = op.join(SITE_ROOT, 'images')
     SUPPORTED_FILE_SUFFIXES = ['.ipynb', '.md']
@@ -134,6 +132,10 @@ if __name__ == '__main__':
     # Load the yaml for this site
     with open(CONFIG_FILE, 'r') as ff:
         site_yaml = yaml.load(ff.read())
+    TEXTBOOK_FOLDER_NAME = site_yaml.get('build_output_folder')
+    TEXTBOOK_FOLDER_NAME_URL = TEXTBOOK_FOLDER_NAME.lstrip('_')
+    TEXTBOOK_FOLDER = op.join(SITE_ROOT, TEXTBOOK_FOLDER_NAME)
+
     # Load the textbook yaml for this site
     if not op.exists(TOC_YAML):
         raise ValueError("No toc.yml file found, please create one")
@@ -154,7 +156,9 @@ if __name__ == '__main__':
         numbered = page.get('not_numbered', None)
         sections = page.get('sections', None)
 
-        path_link = os.path.join(SITE_ROOT, link.replace('/ch/', 'notebooks/'))
+        if not link.startswith('/'):
+            link = '/' + link
+        path_link = os.path.join(SITE_ROOT, link.replace('/{}'.format(TEXTBOOK_FOLDER_NAME_URL), 'notebooks'))
         if not any(path_link.endswith(ii) for ii in SUPPORTED_FILE_SUFFIXES):
             for suf in SUPPORTED_FILE_SUFFIXES:
                 if op.exists(path_link + suf):
@@ -242,7 +246,7 @@ if __name__ == '__main__':
         yaml_fm += ['---']
 
         if link.endswith('.ipynb'):
-            yaml_fm += ['interact_link: {}'.format(link.lstrip('./').replace('ch/', 'notebooks/'))]
+            yaml_fm += ['interact_link: {}'.format(link.lstrip('./').replace(TEXTBOOK_FOLDER_NAME_URL+'/', 'notebooks/'))]
         yaml_fm += ["title: '{}'".format(title)]
         yaml_fm += ["permalink: '{}'".format(_prepare_link(link))]
         yaml_fm += ['prev_page:']
