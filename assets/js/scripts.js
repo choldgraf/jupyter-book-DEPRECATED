@@ -177,3 +177,29 @@ const addCopyButtonToCodeCells = () => {
 
 runWhenDOMLoaded(addCopyButtonToCodeCells)
 document.addEventListener('turbolinks:load', addCopyButtonToCodeCells)
+
+
+/**
+ * [7] Add attributes to Juniper blocks
+ */
+const addJuniperToCodeCells = () => {
+  // If Juniper hasn't loaded, wait a bit and try again. This
+  // happens because we load ClipboardJS asynchronously.
+  if (window.Juniper === undefined) {
+    setTimeout(addJuniperToCodeCells, 250)
+    return
+  }
+
+  const codeCells = document.querySelectorAll('.input_area pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('data-executable', '')
+  });
+
+  new Juniper({
+    repo: 'binder-examples/jupyterlab'
+  });
+}
+
+runWhenDOMLoaded(addJuniperToCodeCells)
+document.addEventListener('turbolinks:load', addJuniperToCodeCells)
