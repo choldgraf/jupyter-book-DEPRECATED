@@ -1,0 +1,52 @@
+<script>
+/**
+ * Add attributes to Juniper blocks
+ */
+
+const initJuniper = () => {
+    
+    const addJuniperToCodeCells = () => {
+        // If Juniper hasn't loaded, wait a bit and try again. This
+        // happens because we load ClipboardJS asynchronously.
+        if (window.Juniper === undefined) {
+        setTimeout(addJuniperToCodeCells, 250)
+        return
+        }
+
+        // If we already detect a Juniper cell, don't re-run
+        if (document.querySelectorAll('div.juniper-cell').length > 0) {
+            return;
+        }
+
+        const codeCells = document.querySelectorAll('.input_area pre')
+        codeCells.forEach((codeCell, index) => {
+        const id = codeCellId(index)
+        codeCell.setAttribute('data-executable', '')
+        });
+
+        new Juniper({
+        repo: '{{ site.textbook_repo_org }}/{{ site.textbook_repo_name }}',
+        branch: '{{ site.textbook_repo_branch }}'
+        });
+
+        // Remove copy buttons since they won't work anymore
+        const copyButtons = document.querySelectorAll('.copybtn')
+        copyButtons.forEach((copyButton, index) => {
+        copyButton.remove();
+        });
+    }
+
+    const getJuniper = () => document.getElementById('juniper-button')
+    const juniperButton = getJuniper();
+    if (juniperButton === null) {
+    setTimeout(initJuniper, 250)
+    return
+    };
+
+    juniperButton.addEventListener('click', addJuniperToCodeCells);
+}
+
+// Initialize Juniper
+runWhenDOMLoaded(initJuniper)
+document.addEventListener('turbolinks:load', initJuniper)
+</script>

@@ -12,6 +12,7 @@ const togglerId = 'js-sidebar-toggle'
 const textbookId = 'js-textbook'
 const togglerActiveClass = 'is-active'
 const textbookActiveClass = 'js-show-sidebar'
+const juniperId = 'juniper-button'
 
 const mathRenderedClass = 'js-mathjax-rendered'
 
@@ -197,9 +198,26 @@ const addJuniperToCodeCells = () => {
   });
 
   new Juniper({
-    repo: 'binder-examples/jupyterlab'
+    repo: 'data-8/textbook'
+  });
+
+  // Remove copy buttons since they won't work anymore
+  const copyButtons = document.querySelectorAll('.copybtn')
+  copyButtons.forEach((copyButton, index) => {
+    copyButton.remove();
   });
 }
 
-runWhenDOMLoaded(addJuniperToCodeCells)
-document.addEventListener('turbolinks:load', addJuniperToCodeCells)
+const initJuniper = () => {
+  const getJuniper = () => document.getElementById('juniper-button')
+  const juniperButton = getJuniper();
+  if (juniperButton === null) {
+    setTimeout(initJuniper, 250)
+    return
+  };
+  juniperButton.addEventListener('click', addJuniperToCodeCells);
+}
+
+{% if site.use_juniper_button %}
+initJuniper();
+{% endif %}

@@ -60,7 +60,9 @@
   <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
   {% include interact-update.html %}
 
-  <!-- Include Juniper for interactive code -->
+  <!-- Include Juniper for interactive code if it's enabled -->
+  {% if site.use_juniper_button %}
+  {% include juniper.html %}
   <script src="https://unpkg.com/juniper-js@0.0.4/dist/juniper.min.js"></script>
-
+  {% endif %}
 </head>

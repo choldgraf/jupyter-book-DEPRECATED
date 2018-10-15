@@ -1,0 +1,25 @@
+pre.CodeMirror-line {
+    padding: 0;
+    margin-bottom: 0px;
+    border: none;
+}
+
+div.CodeMirror {
+    padding: .5em 1em 1em;
+}
+
+.juniper-output {
+    background: #eee;
+    color: #000;
+    padding: .5em;
+    white-space: pre-wrap;
+    margin-bottom: 1em;
+}
+
+pre.CodeMirror-line span {
+    padding: 0px.2em 0px .2em;
+}
+
+.juniper-button {
+    z-index: 999;
+}
