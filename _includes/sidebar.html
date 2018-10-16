@@ -20,19 +20,21 @@ a 1-level nesting; we will label 1.2, but not 1.2.1.
   <h2 class="c-sidebar__title">{{ site.title }}</h2>
   <ul class="c-sidebar__chapters">
     {% for chapter in site.data.toc %}
-
       {% comment %}
       If the entry is a divider, render a divider and move to next entry.
       {% endcomment %}
       {% if chapter.divider %}
         <li class="c-sidebar__divider"></li>
         {% continue %}
+      {% elsif chapter.header %}
+        <li><h2 class="c-sidebar__title">{{ chapter.header }}</li>
+        {% continue %}
       {% endif %}
 
       {% comment %}
       If the entry is the current page, assign a CSS class to highlight it.
       {% endcomment %}
-      {% if chapter.url == page.url %}
+      {% if page.url contains chapter.url %}
         {% assign active_class = "c-sidebar__entry--active" %}
       {% else %}
         {% assign active_class = "" %}
@@ -56,15 +58,16 @@ a 1-level nesting; we will label 1.2, but not 1.2.1.
           {% endcomment %}
           {% assign any_section_active = 0 %}
           {% for section in chapter.sections %}
-            {% if section.url == page.url %}
+            {% if page.url contains section.url %}
+
               {% assign any_section_active = 1 %}
             {% elsif section.subsections %}
               {% for subsection in section.subsections %}
-                {% if subsection.url == page.url %}
+                {% if page.url contains subsection.url %}
                   {% assign any_section_active = 1 %}
                 {% endif %}
               {% endfor %}  
-            {% elsif chapter.url == page.url %}
+            {% elsif page.url contains chapter.url %}
               {% assign any_section_active = 1 %}
             {% endif %}
           {% endfor %}
@@ -82,7 +85,7 @@ a 1-level nesting; we will label 1.2, but not 1.2.1.
               If the entry is the current page, assign a CSS class to highlight
               it.
               {% endcomment %}
-              {% if section.url == page.url %}
+              {% if page.url contains section.url %}
                 {% assign active_class = "c-sidebar__entry--active" %}
               {% else %}
                 {% assign active_class = "" %}
@@ -103,7 +106,7 @@ a 1-level nesting; we will label 1.2, but not 1.2.1.
                   {% comment %}
                   Now add sub-sections. These will always be shown if they exist.
                   {% endcomment %}
-                  {% if subsection.url == page.url %}
+                  {% if page.url contains subsection.url %}
                     {% assign active_class = "c-sidebar__entry--active" %}
                   {% else %}
                     {% assign active_class = "" %}
@@ -111,7 +114,7 @@ a 1-level nesting; we will label 1.2, but not 1.2.1.
     
                   <li class="c-sidebar__subsection">
                     <a class="c-sidebar__entry {{ active_class }}"
-                      href="{{ subsection.url  | relative_url }}"
+                      href="{{ subsection.url | relative_url }}"
                     >
                       {% unless chapter.not_numbered or section.not_numbered or subsection.not_numbered %}
                         {{ chapter_num }}.{{ section_num }}.{{ subsection_num }}

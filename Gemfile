@@ -16,3 +16,5 @@ gem 'guard', '~> 2.14.2'
 gem 'guard-jekyll-plus', '~> 2.0.2'
 gem 'guard-livereload', '~> 2.5.2'
 
+# Textbook plugins
+gem 'jekyll-redirect-from'

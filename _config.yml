@@ -13,6 +13,9 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
+#######################################################################################
+# Jekyll site settings
 title: Jupyter Books
 author: Samuel Lau and Deborah Nolan and Chris Holdgraf
 email: samlau95@berkeley.edu
@@ -22,14 +25,17 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/jupyter-book" # the subpath of your site, e.g. /blog
 url: "https://predictablynoisy.com" # the base hostname & protocol for your site, e.g. http://example.com
 
+#######################################################################################
+# Jupyter Book settings
+
 # Textbook settings
+content_folder_name       : "content"  # The folder where your raw content (notebooks/markdown files) are located
 textbook_logo             : images/logo/logo.png  # A logo to be displayed at the top of your textbook sidebar
 hide_cell_text            : "# HIDDEN"  # When building the textbook, any cells with this text inside will be hidden in the output markdown
 hide_code_text            : "# NO CODE"  # When building the textbook, any cells with this text inside will have *only* their output shown (no code)
 css_url                   : "/assets/css" # Path to static CSS files
 js_url                    : "/assets/js" # Path to JS files
 collapse_inactive_chapters: true  # Whether to collapse the inactive chapters in the sidebar
-build_output_folder       : '_ch'  # Where will the built textbook files be output. Links in `toc.yml` should point to this folder.
 
 # Interact link settings
 hub_url                  : "https://mybinder.org"  # The URL for your JupyterHub/BinderHub.
@@ -42,6 +48,9 @@ textbook_repo_branch     : "master"  # The branch on which your textbook is host
 use_jupyterlab           : false  # If 'true', interact links will use JupyterLab as the interface
 interact_text            : "Interact"  # The text that interact buttons will contain.
 
+#######################################################################################
+# Jekyll build settings
+
 # Site settings (only modify if you know what you're doing)
 defaults:
   - scope:
@@ -51,10 +60,6 @@ defaults:
       toc: true
       toc_label: "  On this page"
       toc_icon: "list-ul"
-
-collections:
-  ch:
-    output: true
 
 favicon_path: "images/logo/favicon.ico"
 
@@ -67,6 +72,10 @@ kramdown:
 sass:
   style: compressed
 
+collections:
+  build:
+    output: true
+    permalink: /:path/
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -83,3 +92,6 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - scripts/
+
+plugins:
+  - jekyll-redirect-from
