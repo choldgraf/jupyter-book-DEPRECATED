@@ -2,7 +2,7 @@
 
 You can configure several aspects of your site. This is primarily done
 by changing [the values in `_config.yml`](https://github.com/choldgraf/jupyter-book/blob/master/_config.yml). Values that are unique to the
-textbook can be found under the `# Textbook settings` section. See the
+textbook can be found under the `# Jupyter Books settings` section. See the
 [comments in that file](https://github.com/choldgraf/jupyter-book/blob/master/_config.yml) for information about what each field does.
 
 You can modify things like where your interact links point (if you've set up your

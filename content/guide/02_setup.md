@@ -17,6 +17,7 @@ To import the template repository to your GitHub account, take the following ste
   ```
   https://github.com/choldgraf/jupyter-book`
   ```
+
 * Choose a new name for your repository, and whether you want it to be public.
 
   For example:
@@ -39,13 +40,13 @@ That's it!
 
 ## Set up your repository and dependencies
 
-The Jupyter Book template repository primarily depends on three sets of tools:
+The Jupyter Book repository primarily depends on three sets of tools:
 
 * Python and Jupyter for converting Jupyter Notebooks into Jekyll-ready markdown
 * GitHub (specifically, GitHub-pages) for hosting your textbook online with Jekyll
-* (optionally) Ruby and Jekyll for previewing changes locally before pushing to GitHub
+* (optionally) Ruby and Jekyll for building or previewing your site locally before pushing to GitHub
 
-This page helps you set each of these up
+This section helps you set each of these up
 
 
 0. **Install the Anaconda distribution of Python**. This is needed to install
@@ -62,15 +63,18 @@ This page helps you set each of these up
 
 3. (optionally) **Install Ruby and the Jekyll plugin.**
 
+   If you want to build and preview the site locally, you'll need Ruby and Jekyll.
    [See the Jekyll docs](https://jekyllrb.com/docs/installation/) for information on this.
    As well as the [GitHub gh-pages documentation](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/)
    for more information on how Jekyll and GitHub interact.
 
+   Make sure you run `bundle install` from the jupyter-book root so that you install its required dependencies!
+
 ## Deploying a JupyterHub
 
-If you wish, you may deploy a JupyterHub alongside your textbook. This way, students can
-access the Jekyll markdown version of your course material, but can click the "interact" links
-at the top of each page and be taken to a live Jupyter Notebook running on a JupyterHub.
+If you wish, you may deploy a JupyterHub alongside your textbook. This way, for pages that are built from
+Jupyter Notebooks, students can click the "interact" links
+at the top of each page and be taken to a live Jupyter Notebook running on your JupyterHub.
 
 The easiest way to set up a JupyterHub is to follow [The Littlest JupyterHub guide](https://the-littlest-jupyterhub.readthedocs.io/en/latest/index.html).
 This is a straightforward deployment of JupyterHub on a single VM, and is suitable for

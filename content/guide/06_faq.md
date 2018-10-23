@@ -16,13 +16,13 @@ steps:
        git pull upstream master
 
 3. Resolve any merge conflicts that may arise. Make sure that you don't over-write
-   any important files (e.g. anything in your `notebooks/` directory or in `_config.yml`)
+   any important files (e.g. anything in your `content/` directory or in `_config.yml`)
 4. **If there are lots of merge conflicts** you can try to "cherry pick" only the commit
    that you want to deploy to your textbook. `git` has a special command for this.
    First, go to the base repository for the textbook template and look up the "commits"
    page at the following URL:
 
-   https://github.com/choldgraf/textbook-jekyll-template/commits/master
+   https://github.com/choldgraf/jupyter-book/commits/master
 
    Find the commit that you want to implement on *your* copy of the repository. Click the button with
    its hash (there's one on the right of each row). Finally, copy the long commit hash that's listed
@@ -52,4 +52,4 @@ be included in this script, please open an issue
 ## What if I have an issue or question?
 
 If you've got questions, concerns, or suggestions, please open an issue at
-[at the textbook template issues page](https://github.com/choldgraf/textbook-book/issues)
+[at the jupyter book issues page](https://github.com/choldgraf/jupyter-book/issues)
